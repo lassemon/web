@@ -13,7 +13,7 @@
 
 ### builing app
 `$ gulp`
-*(runs watch but doesn't start server)*
+*(builds development version of app)*
 
 ### Starting http server
 `$ gulp serve`

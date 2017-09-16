@@ -18,5 +18,9 @@ gulp.task('3rdparty', function (cb) {
   gulp.src(gulp.paths.lib.fonts)
   	.pipe(gulp.dest(gulp.paths.tempDir + '/fonts'));
 
+	// images
+	gulp.src(gulp.paths.images.favicon)
+		.pipe(gulp.dest(gulp.paths.tempDir));
+
 	cb();
 });
