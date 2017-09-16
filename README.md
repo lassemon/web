@@ -2,11 +2,11 @@
 
 #### pre-install
 - install node
- - https://nodejs.org/
+  - https://nodejs.org/
 - install yarn *(or use npm)*
- - https://yarnpkg.com/en/
+  - https://yarnpkg.com/en/
 - install global gulp
- - `$ yarn global add gulp@latest`
+  - `$ yarn global add gulp@latest`
 
 ### Installation
 `$ yarn install`
