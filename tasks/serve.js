@@ -4,7 +4,7 @@ var fs = require('fs');
 var runSequence = require('run-sequence');
 var reload = browserSync.reload;
 
-gulp.task('serve', function () {
+gulp.task('serve', ['watch'], function () {
   if(fs.existsSync(gulp.paths.tempDir)) {
     browserSync({
       notify: false,
