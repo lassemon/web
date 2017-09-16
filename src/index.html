@@ -18,37 +18,50 @@
   </div>
 
   <header class="hidden">
-    <div class="title-container">
-      <h1 class="title">web livereload</h1>
-      <span class="author">
+    <div class="title">
+      <h1 class="title__text">web livereload</h1>
+      <span class="title__author">
         by <a href="https://github.com/lassemon" target="_blank" rel="noreferrer nofollow">lassemon</a>
       </span>
     </div>
-
     <nav>
-      <input id="tab1" type="radio" name="tabs" checked>
-      <label for="tab1"><i class="fa fa-code"></i><span>es6</span></label>
-
-      <input id="tab2" type="radio" name="tabs">
-      <label for="tab2"><i class="fa fa-pencil-square-o"></i><span>html</span></label>
+      <ul class="tabs">
+        <li class="tab">
+          <input id="tab-es6-section" type="radio" name="tabs" checked />
+          <label for="tab-es6-section" class="tab__label">
+            <i class="fa fa-code"></i>
+            <span class="tab__text">EcmaScript 6</span>
+          </label>
+        </li>
+        <li class="tab">
+          <input id="tab-html-section" type="radio" name="tabs" />
+          <label for="tab-html-section" class="tab__label">
+            <i class="fa fa-html5"></i>
+            <span class="tab__text">HTML 5</span>
+          </label>
+        </li>
+      </ul>
     </nav>
   </header>
 
-  <main>
-    <section class="js-es6-section es6-section">
+  <main class="hidden">
+    <section id="es6-section" class="tab__content js-es6-section">
       <div class="js-template hidden">
         <div class="row">
           <div class="twelve columns">
             <h4 class="header"></h4>
           </div>
         </div>
-    		<div class="row">
-    	    <div class="one-half column code">
+      	<div class="row">
+          <div class="one-half column code">
             <textarea class="es6 input"></textarea>
           </div>
-    	    <div class="one-half column code es5"></div>
-    	  </div>
+          <div class="one-half column code es5"></div>
+        </div>
       </div>
+    </section>
+    <section id="html-section" class="tab__content hidden">
+      <h1>Hello world</h1>
     </section>
   </main>
 

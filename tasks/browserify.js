@@ -12,7 +12,6 @@ gulp.task('browserify', function(){
   developmentBundle();
 });
 
-
 function developmentBundle(){
   var bundler = browserify({
     entries: [gulp.paths.jsApp],
