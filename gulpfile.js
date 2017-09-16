@@ -4,7 +4,7 @@ var sourceRoot = './src';
 
 gulp.paths = {
   tempDir : './.tmp',
-  packageDir : './dist',
+  distDir : './dist',
   jsApp : sourceRoot + '/js/app.js',
   cssRoot : sourceRoot + '/css/main.scss',
   htmlRoot : sourceRoot + '/index.html',
