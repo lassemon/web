@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var rename = require('gulp-rename');
+let cleanCSS = require('gulp-clean-css');
 
 gulp.task('styles', function(cb) {
   return gulp.src(gulp.paths.cssRoot)
@@ -8,5 +9,15 @@ gulp.task('styles', function(cb) {
     .pipe(rename('bundle.css'))
     .pipe(gulp.dest(gulp.paths.tempDir));
 
-cb();
+  cb();
+});
+
+gulp.task('styles-dist', function(cb) {
+  return gulp.src(gulp.paths.cssRoot)
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
+    .pipe(rename('bundle.css'))
+    .pipe(gulp.dest(gulp.paths.distDir));
+
+  cb();
 });

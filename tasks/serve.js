@@ -21,3 +21,21 @@ gulp.task('serve', ['watch'], function () {
     console.error('no .tmp dir found! run build first!');
   }
 });
+
+gulp.task('serve-dist', function () {
+  if(fs.existsSync(gulp.paths.distDir)) {
+    browserSync({
+      notify: false,
+      port: 8080,
+      server: {
+        baseDir: [gulp.paths.distDir]
+      }
+    });
+
+    gulp.watch([
+      gulp.paths.distDir + '/**'
+    ]).on('change', reload);
+  } else {
+    console.error('no /dist dir found! run build first!');
+  }
+});

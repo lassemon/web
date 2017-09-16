@@ -11,7 +11,7 @@
 ### Installation
 `$ yarn install`
 
-### builing app
+### Development build
 `$ gulp`
 *(builds development version of app)*
 
@@ -19,8 +19,13 @@
 `$ gulp serve`
 *(server at localhost:8080)*
 
-### Server logic
-The `gulp` build builds the development version under ./.tmp folder and `gulp serve`
-creates a node server that serves the index.html file from that folder.
+### Production build
+```
+$ gulp dist
+$ gulp serve-dist
+```
 
-Production build in progress..
+### Build logic
+The `gulp` build builds the development version under ./.tmp folder and `gulp serve` creates a node server that serves the index.html file from that folder.
+
+The `gulp dist` build builds the production version under ./dist folder and `gulp serve-dist` creates a node server that serves the index.html file from that folder.
