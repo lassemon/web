@@ -1,8 +1,7 @@
 var gulp = require('gulp');
 
 gulp.task('html', function (cb) {
-	gulp.src('./src/*.html')
+	gulp.src(gulp.paths.htmlRoot)
   	.pipe(gulp.dest(gulp.paths.tempDir));
-    
   cb();
 });

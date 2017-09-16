@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   'use strict';
 
   u('.spinner').addClass('hidden');
-  u('.title-container').removeClass('hidden');
+  u('header').removeClass('hidden');
 
   var fs = require('fs');
 
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   (function showCode() {
-    var container = u('body .container');
+    var container = u('body .js-es6-section');
     _.forEach(es6Codes, function(value, key){
       var codeContainer = createCodeContainer(value, key);
       container.append(codeContainer);

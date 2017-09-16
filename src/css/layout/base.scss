@@ -1,0 +1,36 @@
+main {
+  width: 98%;
+  margin: 0 auto;
+  max-width: none;
+  padding: 0 0 4em 0;
+}
+
+@media screen and (max-width: 920px) {
+    .container {
+      width: 99%;
+    }
+    .column {
+      margin: 0;
+    }
+    .one-half.column {
+      width: 50%;
+    }
+    pre {
+      font-size: .8em;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .container {
+      width: 99%;
+    }
+    .column {
+      margin: 0;
+    }
+    .one-half.column {
+      width: 100%;
+    }
+    pre {
+      font-size: .8em;
+    }
+}

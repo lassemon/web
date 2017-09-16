@@ -7,6 +7,7 @@
   <meta name="author" content="Lasse Pirinen lassemon.pirinen@gmail.com">
   <title>web livereload</title>
 
+  <link rel="stylesheet" href="/lib.css">
   <link rel="stylesheet" href="/bundle.css">
 </head>
 <body>
@@ -16,28 +17,40 @@
     <div class="double-bounce2"></div>
   </div>
 
-  <div class="container">
-    <div class="title-container hidden">
+  <header class="hidden">
+    <div class="title-container">
       <h1 class="title">web livereload</h1>
       <span class="author">
         by <a href="https://github.com/lassemon" target="_blank" rel="noreferrer nofollow">lassemon</a>
       </span>
     </div>
 
-    <div class="js-template hidden">
-      <div class="row">
-        <div class="twelve columns">
-          <h4 class="header"></h4>
+    <nav>
+      <input id="tab1" type="radio" name="tabs" checked>
+      <label for="tab1"><i class="fa fa-code"></i><span>es6</span></label>
+
+      <input id="tab2" type="radio" name="tabs">
+      <label for="tab2"><i class="fa fa-pencil-square-o"></i><span>html</span></label>
+    </nav>
+  </header>
+
+  <main>
+    <section class="js-es6-section es6-section">
+      <div class="js-template hidden">
+        <div class="row">
+          <div class="twelve columns">
+            <h4 class="header"></h4>
+          </div>
         </div>
+    		<div class="row">
+    	    <div class="one-half column code">
+            <textarea class="es6 input"></textarea>
+          </div>
+    	    <div class="one-half column code es5"></div>
+    	  </div>
       </div>
-  		<div class="row">
-  	    <div class="one-half column code">
-          <textarea class="es6 input"></textarea>
-        </div>
-  	    <div class="one-half column code es5"></div>
-  	  </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
   <script src="lib/babel.min.js"></script>
   <script src="lib/umbrella.min.js"></script>

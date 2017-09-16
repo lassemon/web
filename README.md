@@ -11,7 +11,7 @@
 ### Installation
 `$ yarn install`
 
-### Starting app
+### builing app
 `$ gulp`
 *(runs watch but doesn't start server)*
 
