@@ -1,15 +1,16 @@
-.title-container {
-  margin: .5em;
+.title {
   display: inline-block;
+  margin: 0 0 1em 0;
 }
 
-.title {
+.title__text {
   margin: 0;
 }
 
-.author {
+.title__author {
   font-size: 1em;
   font-style: italic;
   display: block;
   text-align: right;
+  margin: -.7em -2em 0 0;
 }

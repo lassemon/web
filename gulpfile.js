@@ -8,6 +8,9 @@ gulp.paths = {
   jsApp : sourceRoot + '/js/app.js',
   cssRoot : sourceRoot + '/css/main.scss',
   htmlRoot : sourceRoot + '/index.html',
+  js : {
+    es6: './src/js/es6'
+  },
   images : {
     favicon : './favicon.ico'
   },
