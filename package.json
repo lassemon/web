@@ -1,0 +1,26 @@
+{
+  "name": "web-livereload-demos",
+  "version": "0.0.1",
+  "description": "web livereload demos",
+  "license": "MIT",
+  "homepage": "web.viitekehys.net",
+  "devDependencies": {
+    "brfs": "1.4.3",
+    "browser-sync": "2.18.13",
+    "browserify": "14.4.0",
+    "del": "3.0.0",
+    "gulp": "3.9.1",
+    "gulp-batch": "1.0.5",
+    "gulp-eslint": "4.0.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "3.1.0",
+    "gulp-sourcemaps": "2.6.1",
+    "gulp-util": "3.0.8",
+    "gulp-watch": "4.3.11",
+    "require-dir": "0.3.2",
+    "run-sequence": "2.1.0",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0",
+    "watchify": "3.9.0"
+  }
+}

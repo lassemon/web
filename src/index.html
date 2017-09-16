@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Lasse Pirinen lassemon.pirinen@gmail.com">
+  <title>web livereload</title>
+
+  <link rel="stylesheet" href="/bundle.css">
+</head>
+<body>
+
+  <div class="spinner">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+  </div>
+
+  <div class="container">
+    <div class="title-container hidden">
+      <h1 class="title">web livereload</h1>
+      <span class="author">
+        by <a href="https://github.com/lassemon" target="_blank" rel="noreferrer nofollow">lassemon</a>
+      </span>
+    </div>
+
+    <div class="js-template hidden">
+      <div class="row">
+        <div class="twelve columns">
+          <h4 class="header"></h4>
+        </div>
+      </div>
+  		<div class="row">
+  	    <div class="one-half column code">
+          <textarea class="es6 input"></textarea>
+        </div>
+  	    <div class="one-half column code es5"></div>
+  	  </div>
+    </div>
+  </div>
+
+  <script src="lib/babel.min.js"></script>
+  <script src="lib/umbrella.min.js"></script>
+  <script src="lib/lodash.min.js"></script>
+  <script src="bundle.js"></script>
+</body>
+</html>
