@@ -8,12 +8,23 @@
 .codegrid__header {
   grid-column: 1 / span 1;
   border-right: 2px solid lighten($highlight-color, 40);
-  padding: 1em 0 0 .5em;
+  padding: 0 0 0 .5em;
 }
 
-.codegrid__input {
+.codegrid__input,
+.codegrid__input-header {
   border-right: 2px solid lighten($highlight-color, 40);
   grid-column-start: 1;
+}
+
+.codegrid__input-header-text,
+.codegrid__output-header-text {
+  display: block;
+  color: lighten($dark-text-color, 30);
+  font-size: 1.5em;
+  font-style: italic;
+  margin: 1em 1em 0 0;
+  text-align: right;
 }
 
 .codegrid__input:before {
@@ -31,7 +42,8 @@
   color: lighten($dark-text-color, 20);
 }
 
-.codegrid__output {
+.codegrid__output,
+.codegrid__output-header {
   grid-column-start: 2;
 }
 
