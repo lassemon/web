@@ -1,7 +1,6 @@
 # web livereload demos
 
-## live site
-http://web.viitekehys.net/
+## live site http://web.viitekehys.net/
 
 #### pre-install
 - install node
