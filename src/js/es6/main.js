@@ -1,6 +1,9 @@
 module.exports = function () {
   var fs = require('fs');
 
+  var codeContainerClassName = '.js-code-container';
+  var codeInputClassName = '.js-code-input';
+
   var es6Codes = {
     'custom' : fs.readFileSync('./src/js/es6/custom.js', 'utf8'),
     'let' : fs.readFileSync('./src/js/es6/let.js', 'utf8'),
@@ -12,7 +15,7 @@ module.exports = function () {
   };
 
   (function showCode() {
-    var container = u('body .js-es6-section');
+    var container = u('body .js-es6-section '+codeContainerClassName);
     _.forEach(es6Codes, function(value, key){
       var codeContainer = createCodeContainer(value, key);
       container.append(codeContainer);
@@ -21,7 +24,7 @@ module.exports = function () {
   })();
 
   (function resizeDOM() {
-    u('textarea.input').each(function(node){
+    u('textarea.js-input').each(function(node){
       textAreaAdjust(node);
     });
   })();
@@ -32,10 +35,10 @@ module.exports = function () {
   };
 
   function addChangeListener(container, key){
-    container.find('.' + key + ' .input').on('input propertychange', function(event){
+    container.find('.' + key + ' .js-input').on('input propertychange', function(event){
       var textarea = u(event.target);
-      var babelContainerClassName = textarea.closest('.row').attr('class').split(' ')[1];
-      var babelContainer = u('.' + babelContainerClassName + ' pre');
+      var babelContainerClassName = getBabelContainerClassName(textarea);
+      var babelContainer = u('pre.' + babelContainerClassName);
       var transformedCode = babelify(event.target.value);
       if(typeof transformedCode === 'string' && !transformedCode.error){
         babelContainer.html(transformedCode);
@@ -47,19 +50,26 @@ module.exports = function () {
     });
   };
 
+  function getBabelContainerClassName(textarea){
+    var codeInput = textarea.closest(codeInputClassName);
+    var classes = codeInput.attr('class').split(' ');
+    return classes[classes.length-1];
+  };
+
   function createCodeContainer(es6Code, className){
     var template = u(document.createElement('div'));
     template.html(u('.js-template').html());
 
     template.find('.header').html(className);
-    var es6Container = template.find('.es6');
+    var es6Container = template.find('.js-es6');
     var es6codeContainer = u(document.createElement('div'));
     es6codeContainer.append(es6Code);
     es6Container.append(es6codeContainer.html());
 
-    var es5Container = template.find('.es5');
+    var es5Container = template.find('.js-es5');
     var es5codeContainer = document.createElement('pre');
     es5codeContainer.classList.add(className);
+    es5codeContainer.classList.add('code-output');
     var transformedCode = babelify(es6Code);
     if(typeof transformedCode === 'string' && !transformedCode.error){
       es5codeContainer.innerHTML = transformedCode;
@@ -70,7 +80,7 @@ module.exports = function () {
 
     es5Container.append(es5codeContainer.outerHTML);
 
-    template.find('.row').addClass(className);
+    template.find(codeInputClassName).addClass(className);
     return template.html();
   };
 

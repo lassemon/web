@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var fs = require('fs');
-var runSequence = require('run-sequence');
-var reload = browserSync.reload;
+const gulp = require('gulp');
+const browserSync = require('browser-sync');
+const fs = require('fs');
+const runSequence = require('run-sequence');
+const reload = browserSync.reload;
 
 gulp.task('serve', ['watch'], function () {
   if(fs.existsSync(gulp.paths.tempDir)) {

@@ -1,12 +1,12 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var extend = require('util')._extend
-var brfs = require('brfs');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const extend = require('util')._extend
+const brfs = require('brfs');
 
-var browserify = require('browserify');
-var watchify = require('watchify');
+const browserify = require('browserify');
+const watchify = require('watchify');
 
 gulp.task('browserify', function(){
   developmentBundle();
@@ -17,7 +17,7 @@ gulp.task('browserify-dist', function(){
 });
 
 function developmentBundle(){
-  var bundler = browserify({
+  const bundler = browserify({
     entries: [gulp.paths.jsApp],
     transform: brfs
   });
@@ -25,7 +25,7 @@ function developmentBundle(){
 }
 
 function productionBundle(){
-  var bundler = browserify({
+  const bundler = browserify({
     entries: [gulp.paths.jsApp],
     transform: brfs
   });

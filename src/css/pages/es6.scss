@@ -1,9 +1,5 @@
 #es6-section {
-  .code {
-    padding: .5em;
-  }
-
-  .input {
+  .code-input {
     line-height: 1.4em;
     box-sizing: border-box;
     resize: none;
@@ -26,7 +22,7 @@
       font-size: .8em;
   }
 
-  pre {
+  .code-output {
     background: white;
     border: 1px solid $border-color;
     line-height: 1.4em;
@@ -34,5 +30,6 @@
     margin: 0;
     padding: .5em;
     word-wrap: break-word;
+    font-size: .8em;
   }
 }

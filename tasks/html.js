@@ -1,5 +1,5 @@
-var gulp = require('gulp');
-var htmlmin = require('gulp-htmlmin');
+const gulp = require('gulp');
+const htmlmin = require('gulp-htmlmin');
 
 gulp.task('html', function (cb) {
 	gulp.src(gulp.paths.htmlRoot)

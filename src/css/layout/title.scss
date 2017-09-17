@@ -13,4 +13,7 @@
   display: block;
   text-align: right;
   margin: -.7em -2em 0 0;
+  a {
+    color: $main-text-color;
+  }
 }

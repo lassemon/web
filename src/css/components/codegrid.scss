@@ -1,0 +1,61 @@
+.codegrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: repeat(auto-fill, 50%);
+  box-sizing: border-box;
+}
+
+.codegrid__header {
+  grid-column: 1 / span 1;
+  border-right: 2px solid lighten($highlight-color, 40);
+  padding: 1em 0 0 .5em;
+}
+
+.codegrid__input {
+  border-right: 2px solid lighten($highlight-color, 40);
+  grid-column-start: 1;
+}
+
+.codegrid__input:before {
+  content: "input";
+}
+
+.codegrid__output:before {
+  content: "output";
+}
+
+.codegrid__input:before,
+.codegrid__output:before {
+  font-size: .8em;
+  font-style: italic;
+  color: lighten($dark-text-color, 20);
+}
+
+.codegrid__output {
+  grid-column-start: 2;
+}
+
+.codegrid__input,
+.codegrid__output {
+  background: $dark-background-color;
+  padding: .7em;
+}
+
+@media screen and (max-width: $medium-page-width) {
+  .codegrid__header,
+  .codegrid__input,
+  .codegrid__output {
+    grid-column: 1 / span 2;
+    border: 0;
+  }
+
+  .codegrid__input {
+    padding-top: 1em;
+    padding-bottom: 0;
+  }
+
+  .codegrid__output {
+    padding-top: 0;
+    padding-bottom: 1em;
+  }
+}
