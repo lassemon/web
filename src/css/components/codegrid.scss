@@ -70,4 +70,9 @@
     padding-top: 0;
     padding-bottom: 1em;
   }
+
+  .codegrid__input-header,
+  .codegrid__output-header {
+    display: none;
+  }
 }
