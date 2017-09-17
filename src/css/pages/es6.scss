@@ -32,4 +32,14 @@
     word-wrap: break-word;
     font-size: .8em;
   }
+
+  .codegrid__input[class*="custom"] {
+    .code-input {
+      height: 17rem;
+    }
+  }
+
+  .codegrid__output pre[class*="custom"] {
+    height: 15.6rem;
+  }
 }

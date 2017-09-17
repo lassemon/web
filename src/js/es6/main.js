@@ -1,8 +1,10 @@
 module.exports = function () {
   var fs = require('fs');
 
-  var codeContainerClassName = '.js-code-container';
-  var codeInputClassName = '.js-code-input';
+  var jsDOMAnchorPrefix = 'js-';
+
+  var codeContainerClassName = jsDOMAnchorPrefix + 'code-container';
+  var codeInputClassName = jsDOMAnchorPrefix + 'code-input';
 
   var es6Codes = {
     'custom' : fs.readFileSync('./src/js/es6/custom.js', 'utf8'),
@@ -15,27 +17,29 @@ module.exports = function () {
   };
 
   (function showCode() {
-    var container = u('body .js-es6-section '+codeContainerClassName);
+    var container = u('body .'+jsDOMAnchorPrefix+'es6-section .'+codeContainerClassName);
     _.forEach(es6Codes, function(value, key){
-      var codeContainer = createCodeContainer(value, key);
+      var codeContainer = createCodeContainer(value, jsDOMAnchorPrefix+key);
       container.append(codeContainer);
-      addChangeListener(container, key);
+      addChangeListener(container, jsDOMAnchorPrefix+key);
     });
   })();
 
   (function resizeDOM() {
-    u('textarea.js-input').each(function(node){
+    u('textarea.'+jsDOMAnchorPrefix+'input').each(function(node){
       textAreaAdjust(node);
     });
   })();
 
   function textAreaAdjust(textarea) {
-    textarea.style.height = '1px';
-    textarea.style.height = (25+textarea.scrollHeight)+'px';
+    if(!u(textarea).parent().is('.'+jsDOMAnchorPrefix+'custom')){
+      textarea.style['min-height'] = '1px';
+      textarea.style['min-height'] = (25+textarea.scrollHeight)+'px';
+    }
   };
 
   function addChangeListener(container, key){
-    container.find('.' + key + ' .js-input').on('input propertychange', function(event){
+    container.find('.' + key + ' .'+jsDOMAnchorPrefix+'input').on('input propertychange', function(event){
       var textarea = u(event.target);
       var babelContainerClassName = getBabelContainerClassName(textarea);
       var babelContainer = u('pre.' + babelContainerClassName);
@@ -51,22 +55,22 @@ module.exports = function () {
   };
 
   function getBabelContainerClassName(textarea){
-    var codeInput = textarea.closest(codeInputClassName);
+    var codeInput = textarea.closest('.'+codeInputClassName);
     var classes = codeInput.attr('class').split(' ');
     return classes[classes.length-1];
   };
 
   function createCodeContainer(es6Code, className){
     var template = u(document.createElement('div'));
-    template.html(u('.js-template').html());
+    template.html(u('.'+jsDOMAnchorPrefix+'template').html());
 
-    template.find('.header').html(className);
-    var es6Container = template.find('.js-es6');
+    template.find('.'+jsDOMAnchorPrefix+'header').html(className.replace(jsDOMAnchorPrefix, ''));
+    var es6Container = template.find('.'+jsDOMAnchorPrefix+'es6');
     var es6codeContainer = u(document.createElement('div'));
     es6codeContainer.append(es6Code);
     es6Container.append(es6codeContainer.html());
 
-    var es5Container = template.find('.js-es5');
+    var es5Container = template.find('.'+jsDOMAnchorPrefix+'es5');
     var es5codeContainer = document.createElement('pre');
     es5codeContainer.classList.add(className);
     es5codeContainer.classList.add('code-output');
@@ -80,7 +84,7 @@ module.exports = function () {
 
     es5Container.append(es5codeContainer.outerHTML);
 
-    template.find(codeInputClassName).addClass(className);
+    template.find('.'+codeInputClassName).addClass(className);
     return template.html();
   };
 

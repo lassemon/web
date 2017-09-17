@@ -7,18 +7,22 @@
 
 .codegrid__header {
   grid-column: 1 / span 1;
-  border-right: 2px solid lighten($highlight-color, 40);
+  border-right: 2px solid lighten($highlight-color, 45);
   padding: 0 0 0 .5em;
 }
 
+.codegrid__header-text {
+  margin: 2em 0 0 0;
+}
+
 .codegrid__input,
-.codegrid__input-header {
-  border-right: 2px solid lighten($highlight-color, 40);
+.codegrid__input-title {
+  border-right: 2px solid lighten($highlight-color, 45);
   grid-column-start: 1;
 }
 
-.codegrid__input-header-text,
-.codegrid__output-header-text {
+.codegrid__input-title-text,
+.codegrid__output-title-text {
   display: block;
   color: lighten($dark-text-color, 30);
   font-size: 1.5em;
@@ -43,7 +47,7 @@
 }
 
 .codegrid__output,
-.codegrid__output-header {
+.codegrid__output-title {
   grid-column-start: 2;
 }
 
@@ -71,8 +75,8 @@
     padding-bottom: 1em;
   }
 
-  .codegrid__input-header,
-  .codegrid__output-header {
+  .codegrid__input-title,
+  .codegrid__output-title {
     display: none;
   }
 }
