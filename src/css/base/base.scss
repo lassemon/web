@@ -6,20 +6,12 @@ html, body {
 
 body {
   background: $dark-background-color;
-  color: #818181;
+  color: $dark-text-color;
 }
 
 h1,h2,h3,h4,h5,h6 {
   color: $main-text-color;
   margin: 0;
-}
-
-h1 {
-  margin: .5em 0 .5em 0;
-}
-
-h4 {
-  border-bottom: 2px solid;
 }
 
 h2,h3,h4,h5,h6 {

@@ -1,36 +1,35 @@
+$large-page-content-size: 95%;
+$medium-page-content-size: 97%;
+$small-page-content-size: 100%;
+
 main {
-  width: 98%;
+  width: $large-page-content-size;
   margin: 0 auto;
   max-width: none;
   padding: 0 0 4em 0;
 }
 
-@media screen and (max-width: 920px) {
-    .container {
-      width: 99%;
+header {
+  width: $large-page-content-size;
+  margin: 0 auto;
+  max-width: none;
+}
+
+
+@media screen and (max-width: $medium-page-width) {
+    main {
+      width: $medium-page-content-size;
     }
-    .column {
-      margin: 0;
-    }
-    .one-half.column {
-      width: 50%;
-    }
-    pre {
-      font-size: .8em;
+    header {
+      width: $medium-page-content-size;
     }
 }
 
-@media screen and (max-width: 560px) {
-    .container {
-      width: 99%;
+@media screen and (max-width: $small-page-width) {
+    main {
+      width: $small-page-content-size;
     }
-    .column {
-      margin: 0;
-    }
-    .one-half.column {
-      width: 100%;
-    }
-    pre {
-      font-size: .8em;
+    header {
+      width: $small-page-content-size;
     }
 }

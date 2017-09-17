@@ -1,5 +1,5 @@
-var gulp = require('gulp');
-var eslint = require('gulp-eslint');
+const gulp = require('gulp');
+const eslint = require('gulp-eslint');
 
 gulp.task('lint', function (cb) {
   gulp.src(['./src/**/*.js', '!'+gulp.paths.js.es6+'/**', '!'+gulp.paths.lib.js+'**', '!node_modules/**'])

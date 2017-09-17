@@ -1,7 +1,7 @@
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var batch = require('gulp-batch');
-var runSequence = require('run-sequence');
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const batch = require('gulp-batch');
+const runSequence = require('run-sequence');
 
 gulp.task('watch', ['js', 'styles', 'html'], function () {
   watch('./src/**/*.html', batch(function (events, done) {
