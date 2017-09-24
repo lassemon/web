@@ -33,8 +33,8 @@ module.exports = function () {
 
   function textAreaAdjust(textarea) {
     if(!u(textarea).parent().is('.'+jsDOMAnchorPrefix+'custom')){
-      textarea.style['min-height'] = '1px';
-      textarea.style['min-height'] = (25+textarea.scrollHeight)+'px';
+      //textarea.style['min-height'] = '1px';
+      //textarea.style['min-height'] = (25+textarea.scrollHeight)+'px';
     }
   };
 

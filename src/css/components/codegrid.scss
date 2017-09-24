@@ -57,6 +57,50 @@
   padding: .7em;
 }
 
+.code-input {
+  line-height: 1.4em;
+  box-sizing: border-box;
+  resize: none;
+  overflow-x: hidden;
+  width: 100%;
+  font-family: Consolas, 'courier new';
+  margin: 0;
+}
+
+.error {
+  width: 100%;
+  height: 100%;
+  background: $error-color;
+}
+
+.error-text {
+    color: white;
+    padding: .8em;
+    margin: 0;
+    font-size: .8em;
+}
+
+.code-output {
+  background: white;
+  border: 1px solid $border-color;
+  line-height: 1.4em;
+  min-height: 4em;
+  margin: 0;
+  padding: .5em;
+  word-wrap: break-word;
+  font-size: .8em;
+}
+
+.codegrid__input[class*="custom"] {
+  .code-input {
+    height: 17rem;
+  }
+}
+
+.codegrid__output pre[class*="custom"] {
+  height: 15.6rem;
+}
+
 @media screen and (max-width: $medium-page-width) {
   .codegrid__header,
   .codegrid__input,

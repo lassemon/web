@@ -1458,7 +1458,7 @@ express@2.5.x:
     mkdirp "0.3.0"
     qs "0.4.x"
 
-extend@^3.0.0, extend@~3.0.0:
+extend@^3.0.0, extend@^3.0.1, extend@~3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
@@ -1593,6 +1593,10 @@ flat-cache@^1.2.1:
     del "^2.0.2"
     graceful-fs "^4.1.2"
     write "^0.2.1"
+
+flatnest@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/flatnest/-/flatnest-1.0.0.tgz#20421ad05b46c63cad30ef14a8ec625f86b3f1c5"
 
 for-each@~0.3.2:
   version "0.3.2"
@@ -1901,6 +1905,17 @@ gulp-eslint@4.0.0:
   dependencies:
     eslint "^4.0.0"
     gulp-util "^3.0.8"
+
+gulp-file-include@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gulp-file-include/-/gulp-file-include-1.2.0.tgz#ef29a1811347061fd1b5139c7a7048f8d2108a69"
+  dependencies:
+    balanced-match "^1.0.0"
+    concat-stream "^1.6.0"
+    extend "^3.0.1"
+    flatnest "^1.0.0"
+    gulp-util "^3.0.8"
+    through2 "^2.0.3"
 
 gulp-htmlmin@3.0.0:
   version "3.0.0"

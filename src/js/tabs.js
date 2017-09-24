@@ -1,6 +1,8 @@
 module.exports = function(){
   const instance = {};
 
+  var textareaResize = require('./textareaResize.js');
+
   u('input[name="tabs"]').on('change', function(event){
     var clickedTabId = u(event.currentTarget).attr('id');
     var targetTabContent = clickedTabId.replace('tab-', '');
@@ -11,6 +13,7 @@ module.exports = function(){
         tabContent.removeClass('hidden')
       }
     });
+    textareaResize.resizeAll();
   });
 
   return instance;
