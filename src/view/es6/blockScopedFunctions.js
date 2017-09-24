@@ -7,7 +7,7 @@ function foo(){
 {
   function foo(){
     return 2;
-  };
+  }
 }
 
 foo(); // returns 1;
