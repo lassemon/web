@@ -5,8 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
   u('header').removeClass('hidden');
   u('main').removeClass('hidden');
 
-  var tabs = require('./tabs/main.js');
+  var tabs = require('./tabs.js');
   tabs();
-  var es6  = require('./es6/main.js');
-  es6();
+
+  var renderer  = require('./render/render.js');
+  renderer();
+
+  var textareaResize = require('./textareaResize.js');
+  textareaResize.resizeAll();
 });
