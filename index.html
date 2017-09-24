@@ -55,31 +55,16 @@
     <section id="html-section" class="tab__content hidden">
       <div class="codegrid js-code-container">
         <div class="codegrid__header">
-            <h4 class="codegrid__header-text">&lt;figure&gt;</h4>
+            <h4 class="codegrid__header-text">figure</h4>
         </div>
         <div class="codegrid__input js-render-input-container js-render-type-html">
           <textarea class="code-input js-render-input">@@include('./view/html5/figure.html')</textarea>
         </div>
         <div class="codegrid__output js-render-output-container"></div>
       </div>
-      <div class="codegrid js-code-container">
-        <div class="codegrid__header">
-            <h4 class="codegrid__header-text">&lt;article&gt;</h4>
-        </div>
-        <div class="codegrid__input js-render-input-container js-render-type-html">
-          <textarea class="code-input js-render-input">@@include('./view/html5/article.html')</textarea>
-        </div>
-        <div class="codegrid__output js-render-output-container"></div>
-      </div>
-      <div class="codegrid js-code-container">
-        <div class="codegrid__header">
-            <h4 class="codegrid__header-text">&lt;aside&gt;</h4>
-        </div>
-        <div class="codegrid__input js-render-input-container js-render-type-html">
-          <textarea class="code-input js-render-input">@@include('./view/html5/aside.html')</textarea>
-        </div>
-        <div class="codegrid__output js-render-output-container"></div>
-      </div>
+      @@include('./view/html5/template.html', {
+        "html": ""aside\r\n""
+      })
     </section>
   </main>
 
